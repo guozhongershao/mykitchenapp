@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wang.mykitchenapp">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 开放网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 开放磁盘读写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 请求访问使用照相设备 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 访问摄像设备 -->
+    <uses-feature android:name="android.hardware.camera" />
+    .
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/homt_title"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="注册"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:theme="@style/NoActionBar_WindowTraslucentStatus">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DishDetailActivity"
+            android:label="@string/title_activity_dish_detail"
+            android:theme="@style/NoActionBar_WindowTraslucentStatus"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:label="@string/title_activity_user_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.BbsNoteDetailActivity"
+            android:label="@string/title_activity_bbs_note_detail"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".activity.BbsDoNoteActivity" />
+        <activity android:name=".activity.ModifyUserInfoActivity" />
+        <activity android:name=".activity.DishCreateDishActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" ></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFAB40</color>
+    <color name="colorPrimaryDark">#FFAB40</color>
+    <color name="colorAccent">#CCCCCC</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="darkgray">#666</color>
+    <color name="temp_1">#ba2313</color>
+
+    <color name="photopicker_background">#000000</color>
+
+    <!-- register -->
+
+    <!-- login -->
+</resources>

@@ -1,0 +1,285 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
+            app:title="@string/activity_title_dish_publish" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/sv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_dish_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_dish_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="菜谱名"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_dish_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="115dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="start"
+                        android:hint="菜谱概述" />
+                </android.support.design.widget.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/iv_dish_album"
+                    android:layout_width="match_parent"
+                    android:layout_height="233dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#cccccc"
+                    android:src="@drawable/ic_add_white_24dp" />
+
+                <Button
+                    android:id="@+id/btn_overview_next"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="@dimen/login_text_view_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/shape"
+                    android:text="下一步"
+                    android:textColor="#FB9100"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_ingredient"
+                android:layout_width="match_parent"
+                android:layout_height="496dp"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_ingredient_pre"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="@dimen/login_text_view_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/shape"
+                    android:text="上一步"
+                    android:textColor="#FB9100"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_text_ingredient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_ingredient_pre"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/default_dish_ingredient"
+                    android:textSize="@dimen/text_size_sub_head" />
+
+                <TextView
+                    android:id="@+id/tv_dish_detail_ingredient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/tv_text_ingredient"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/default_dish_ingredient"
+                    android:textSize="@dimen/text_size_sub_head" />
+
+                <LinearLayout
+                    android:id="@+id/ll_ingredient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_dish_detail_ingredient"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/til_ingredient_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_dish_ingredient_name"
+                            android:layout_width="224dp"
+                            android:layout_height="wrap_content"
+                            android:hint="原料名"
+                            android:maxLines="1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_dish_ingredient_measure"
+                            android:layout_width="224dp"
+                            android:layout_height="wrap_content"
+                            android:hint="量度"
+                            android:maxLines="1" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_ingredient_add"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignBottom="@+id/ll_ingredient"
+                    android:layout_alignEnd="@+id/btn_ingredient_pre"
+                    android:layout_marginBottom="26dp"
+                    android:src="@drawable/ic_add_circle_outline_primary_24dp" />
+
+                <Button
+                    android:id="@+id/btn_ingredient_next"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="@dimen/login_text_view_width"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/shape"
+                    android:text="下一步"
+                    android:textColor="#FB9100"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_steps"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="496dp">
+
+                <TextView
+                    android:id="@+id/tv_t1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="详细步骤"
+                    android:textSize="@dimen/text_size_sub_head"
+                    android:textStyle="bold"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/tv_t1"
+                    android:layout_above="@+id/iv_dish_step"
+                    android:layout_marginBottom="8dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <ImageView
+                    android:id="@+id/iv_dish_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="#cccccc"
+                    android:src="@drawable/ic_add_white_24dp"
+                    android:layout_above="@+id/ll_description"
+                    android:layout_alignParentStart="true" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_ingredient_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_steps_pre"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/btn_dish_publish"
+                    android:layout_alignBottom="@+id/btn_dish_publish"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="58dp"
+                    android:background="@drawable/shape"
+                    android:text="上一步"
+                    android:textColor="#FB9100"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_dish_publish"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="22dp"
+                    android:layout_marginEnd="48dp"
+                    android:background="@drawable/shape"
+                    android:text="发  布"
+                    android:textColor="#FB9100"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/btn_steps_pre"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/et_step_description"
+                        android:layout_width="224dp"
+                        android:layout_height="wrap_content"
+                        android:hint="步骤描述"
+                        android:maxLines="1"
+                        android:layout_weight="0.77" />
+
+                    <ImageView
+                        android:id="@+id/iv_step_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.21"
+                        android:src="@drawable/ic_add_circle_outline_primary_24dp" />
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
